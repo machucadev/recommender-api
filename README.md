@@ -1,11 +1,11 @@
 # 🧠 Product Recommender API
-***
+
 An intelligent and lightweight API that recommends products based on user purchase history. Built with **FastAPI**, ready for deployment and monetization via **RapidAPI**.
 
 ---
 
 ## 🚀 Features
-***
+
 - Create and store product data
 - Generate product recommendations based on shared categories
 - Fast, asynchronous API using FastAPI
@@ -14,7 +14,7 @@ An intelligent and lightweight API that recommends products based on user purcha
 ---
 
 ## 📦 Tech Stack
-***
+
 - Python 3.11+
 - FastAPI
 - SQLite (can be upgraded to PostgreSQL)
@@ -102,10 +102,10 @@ Response:
 }
 ```
 
-📄 License
+### 📄 License
 This project is licensed under the MIT License.
 
-📬 Contact
+### 📬 Contact
 Made with ❤️ by Santiago Machuca
-📧 santi.machuca@gmail.com
+- 📧 santi.machuca@gmail.com
 
