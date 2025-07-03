@@ -1,0 +1,105 @@
+{
+  "info": {
+    "title": "Product Recommender API",
+    "version": "1.0.0",
+    "description": "An intelligent product recommendation API that suggests similar products based on purchase history. Built with FastAPI and designed for e-commerce applications.",
+    "contact": {
+      "name": "Santiago Machuca",
+      "email": "tuemail@example.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://recommender-api-production-1d1f.up.railway.app",
+      "description": "Production"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "X-RapidAPI-Key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/products/": {
+      "post": {
+        "summary": "Create a new product",
+        "operationId": "createProduct",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "category": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "required": ["name", "category", "description"]
+              },
+              "example": {
+                "name": "Wireless Headphones",
+                "category": "Electronics",
+                "description": "Bluetooth headphones with noise cancellation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Product created successfully"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all products",
+        "operationId": "getProducts",
+        "responses": {
+          "200": {
+            "description": "List of all products"
+          }
+        }
+      }
+    },
+    "/recommendations/": {
+      "post": {
+        "summary": "Get product recommendations",
+        "operationId": "getRecommendations",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_ids": {
+                    "type": "array",
+                    "items": { "type": "integer" }
+                  }
+                },
+                "required": ["product_ids"]
+              },
+              "example": {
+                "product_ids": [1, 4]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "List of recommended products"
+          }
+        }
+      }
+    }
+  }
+}
